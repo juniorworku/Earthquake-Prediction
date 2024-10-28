@@ -5,7 +5,7 @@ import hopsworks
 project = hopsworks.login()
 fs = project.get_feature_store()
 
-dataset_api = project.get_dataset_api
+dataset_api = project.get_dataset_api()
 
 dataset_api.download("Resources/images/df_recent.png")
 dataset_api.download("Resources/images/df_mse.png")
