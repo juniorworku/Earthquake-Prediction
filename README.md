@@ -103,7 +103,7 @@ The Gradio user interface allows users to input parameters and receive magnitude
 
 1. **Navigate to the project directory:**
    ```bash
-   cd earthquake-magnitude-prediction/earthquakes-magnitude-prediction
+   cd earthquake-magnitude-prediction/earthquakes-magnitude
    ```
 
 2. **Running the Gradio app:**
