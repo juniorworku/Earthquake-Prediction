@@ -1,9 +1,7 @@
 # Earthquake Magnitude Prediction
 
-![Earthquake Magnitude Prediction](https://via.placeholder.com/800x200.png?text=Earthquake+Magnitude+Prediction)
-
 ## Overview
-The **Earthquake Magnitude Prediction** project aims to leverage machine learning techniques to accurately predict the magnitudes of earthquakes based on geophysical parameters. This predictive model utilizes a Histogram Gradient Boosting Regressor to analyze historical earthquake data, providing valuable insights into seismic activity. The project features automated pipelines for daily feature extraction and batch inference, ensuring the model remains updated with the latest data.
+The **Earthquake Magnitude Prediction** project implements machine learning techniques to accurately predict the magnitudes of earthquakes based on geophysical parameters. This predictive model utilizes a Histogram Gradient Boosting Regressor to analyze historical earthquake data, providing valuable insights into seismic activity. The project features automated pipelines for daily feature extraction and batch inference, ensuring the model remains updated with the latest data.
 
 ## Table of Contents
 - [Project Objectives](#project-objectives)
@@ -24,7 +22,7 @@ The **Earthquake Magnitude Prediction** project aims to leverage machine learnin
 - [Contact](#contact)
 
 ## Project Objectives
-- To develop a robust machine learning model capable of predicting earthquake magnitudes from geophysical data.
+- To develop a machine learning model capable of predicting earthquake magnitudes from geophysical data.
 - To automate the feature extraction and inference processes, ensuring continuous model improvement.
 - To provide an interactive user interface for real-time predictions and analysis of seismic events.
 
@@ -48,23 +46,23 @@ The **Earthquake Magnitude Prediction** project aims to leverage machine learnin
 To set up this project on your local machine, follow the steps below:
 
 1. **Clone the repository:**
-   ```sh
+   ```bash
    git clone https://github.com/juniorworku/earthquake-magnitude-prediction.git
    cd earthquake-magnitude-prediction
    ```
 
 2. **Create a virtual environment:**
-   ```sh
+   ```bash
    python -m venv venv
    ```
 
 3. **Activate the virtual environment:**
-   ```sh
+   ```bash
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
 4. **Install the required dependencies:**
-   ```sh
+   ```bash
    pip install -r requirements.txt
    ```
 
@@ -74,12 +72,12 @@ To set up this project on your local machine, follow the steps below:
 The daily feature extraction pipeline can be triggered manually or scheduled via GitHub Actions. To run it manually:
 
 1. **Navigate to the project directory:**
-   ```sh
+   ```bash
    cd earthquake-magnitude-prediction
    ```
 
 2. **Running the daily-feature-pipeline:**
-   ```sh
+   ```bash
    ./run-daily-feature-pipeline.sh
    ```
    This script will fetch the latest earthquake data from the USGS Earthquake Catalog, extract relevant features, and store them in the hopsworks machine learning platform.
@@ -88,12 +86,12 @@ The daily feature extraction pipeline can be triggered manually or scheduled via
 The batch inference pipeline continuously monitors the hopsworks machine learning platform for new data inputs and triggers the model to make predictions. To run it manually:
 
 1. **Navigate to the project directory:**
-   ```sh
+   ```bash
    cd earthquake-magnitude-prediction
    ```
 
 2. **Running the batch-inference-pipeline:**
-   ```sh
+   ```bash
    ./run-batch-inference-pipeline.sh
    ```
    This script will continuously monitor the hopsworks machine learning platform for new data inputs, extract relevant features, and make predictions using the trained model.
@@ -104,12 +102,12 @@ The batch inference pipeline continuously monitors the hopsworks machine learnin
 The Gradio user interface allows users to input parameters and receive magnitude predictions. To start the Gradio app:
 
 1. **Navigate to the project directory:**
-   ```sh
+   ```bash
    cd earthquake-magnitude-prediction/earthquakes-magnitude-prediction
    ```
 
 2. **Running the Gradio app:**
-   ```sh
+   ```bash
    gradio run app.py --port 7860
    ```
    This script will start the Gradio app on port 7860, allowing users to input parameters and receive magnitude predictions.
@@ -196,10 +194,3 @@ This project is licensed under the MIT License. See the [LICENSE] file for detai
 ## Contact
 For any questions or concerns, please contact the project maintainers at juniorworku[at]gmail.com.
 [LICENSE]: https://github.com/juniorworku/earthquake-magnitude-prediction/blob/main/LICENSE
-
-
-
-
-
-
-
