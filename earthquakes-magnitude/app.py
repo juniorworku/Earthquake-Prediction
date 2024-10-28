@@ -8,6 +8,7 @@ import hsfs
 import numpy as np
 import plotly.graph_objects as go
 
+# Initialize Hopsworks project and load model
 project = hopsworks.login()
 fs = project.get_feature_store()
 
@@ -37,7 +38,12 @@ def earthquake(latitude, longitude, depth, depth_error, rms, reviewed):
                       columns=['latitude', 'longitude', 'depth', 'deptherror', 'rms', 'reviewed'])
     print("Predicting")
     print(df)
-    res = model.predict(df)
+
+    # Predict magnitude
+    res = model.predict(df)[0]  # Accessing the first element if the model output is an array
+    print("Predicted Magnitude:", res)
+    
+    # Map display of earthquake location
     fig = go.Figure(go.Scattermapbox(
         lat=[latitude],
         lon=[longitude],
@@ -52,12 +58,15 @@ def earthquake(latitude, longitude, depth, depth_error, rms, reviewed):
         mapbox=dict(
             bearing=0,
             center=go.layout.mapbox.Center(
-                lat=0,
-                lon=0
+                lat=latitude,
+                lon=longitude
             ),
         ),
     )
-    return fig, res, earthquake_info(res)
+    
+    # Generate earthquake description based on predicted magnitude
+    description = earthquake_info(res)
+    return fig, float(res), description  # Ensure magnitude is returned as a float for gr.Number
 
 demo = gr.Interface(
     fn=earthquake,
