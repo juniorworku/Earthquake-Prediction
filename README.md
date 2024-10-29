@@ -154,6 +154,9 @@ The model's performance is evaluated using the Mean Squared Error (MSE) metric, 
 ## Inference Pipelines
 
 ### Gradio UI/Online Inference
+
+![Earthquake Magnitude Predictor UI](./earthquake-monitor/predictor_ui.PNG)
+
 The Gradio user interface allows users to input parameters and receive magnitude predictions. The inference pipeline continuously monitors the hopsworks machine learning platform for new data inputs and triggers the model to make predictions. Users will provide:
 
 - Latitude
@@ -166,6 +169,10 @@ The Gradio user interface allows users to input parameters and receive magnitude
 **Output:** The application returns the predicted magnitude along with a visual representation on a world map, indicating the earthquake's location.
 
 ### Batch Inference Monitoring
+
+![Recent Prediction History](./earthquake-monitor/df_recent.png)
+![Recent Inference MSE](./earthquake-monitor/df_mse.png)
+
 The batch inference pipeline continuously monitors the hopsworks machine learning platform for new data inputs and triggers the model to make predictions. The predictions are stored in a separate hopsworks table and visualized on a dashboard. The dashboard provides a visual representation of recent predictions and allows users to assess model
 
 - The last five predictions made by the model.
